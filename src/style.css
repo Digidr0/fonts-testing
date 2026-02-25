@@ -1,0 +1,429 @@
+﻿:root {
+    color-scheme: light;
+    --bg: #f5f5f5;
+    --panel: #ffffff;
+    --ink: #ffffff;
+    --muted: rgba(255, 255, 255, 0.72);
+    --border: rgba(255, 255, 255, 0.5);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background: #0b120b;
+    color: var(--ink);
+}
+
+#app {
+    min-height: 100vh;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.app {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.aurora-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: transparent;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 32px;
+}
+
+.hero-card {
+    max-width: 640px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: transparent;
+    box-shadow: var(--shadow);
+}
+
+.hero-card h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+}
+
+.hero-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.specimen {
+    padding: 28px 24px 32px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: transparent;
+}
+
+.specimen-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 34px;
+    align-items: start;
+}
+
+.specimen-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.specimen-right {
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.specimen-title {
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.specimen-line {
+    font-size: 32px;
+    letter-spacing: 0.06em;
+}
+.specimen-lower {
+    font-size: 28px;
+    letter-spacing: 0.04em;
+}
+
+.specimen-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.specimen-gap {
+    margin-top: 18px;
+}
+
+.specimen-weights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 18px;
+}
+
+.specimen-sample {
+    font-size: 36px;
+    line-height: 1.5;
+    color: var(--ink);
+}
+
+.specimen-weight {
+    padding: 10px 14px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.card {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: var(--shadow);
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+
+input,
+textarea {
+    font: inherit;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--ink);
+}
+
+select {
+    font: inherit;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--ink);
+}
+
+select option {
+    background: #0b120b;
+    color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    align-self: flex-start;
+    background: transparent;
+}
+
+.status.ok {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.status.bad {
+    border-style: dashed;
+    color: var(--muted);
+}
+
+.status-dot {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #e6b456;
+    box-shadow: 0 0 8px rgba(230, 180, 86, 0.35);
+    pointer-events: none;
+    flex: 0 0 auto;
+}
+
+.status-dot.ok {
+    background: #5f9d37;
+    box-shadow: 0 0 10px rgba(112, 230, 95, 0.35);
+}
+
+.status-dot.bad {
+    background: #e64545;
+    box-shadow: 0 0 10px rgba(230, 69, 69, 0.35);
+}
+
+.status-dot.warn {
+    background: #e6b456;
+    box-shadow: 0 0 10px rgba(230, 180, 86, 0.35);
+}
+
+.grow {
+    flex: 1 1 240px;
+    min-width: 200px;
+}
+
+.input-status {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-status {
+    width: 100%;
+    padding-right: 36px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--ink);
+}
+
+.chip:hover {
+    border-color: #ffffff;
+}
+
+.preview {
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    background: transparent;
+    min-height: 96px;
+    line-height: 1.4;
+}
+
+.preview-input {
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    background: transparent;
+    min-height: 100px;
+    line-height: 1.4;
+    padding: 16px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.css-snippet {
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    font-family:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    font-size: 12px;
+}
+
+button {
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+button.ghost {
+    background: transparent;
+    color: #ffffff;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.meta {
+    display: grid;
+    gap: 8px;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 6px;
+}
+
+.meta-row span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.meta-row strong {
+    font-weight: 600;
+}
+
+.error {
+    color: #ffffff;
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.7);
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 720px) {
+    .app {
+        padding: 16px;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .specimen-body {
+        grid-template-columns: 1fr;
+    }
+}
